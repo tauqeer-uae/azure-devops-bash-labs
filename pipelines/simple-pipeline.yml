@@ -1,0 +1,14 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo "Hello from Azure DevOps + Bash 🚀"
+  displayName: "Run Hello World Script"
+
+- script: |
+    chmod +x week1-bash-basics/day1-basic-commands.sh
+    ./week1-bash-basics/day1-basic-commands.sh
+  displayName: "Run Day 1 Script"
