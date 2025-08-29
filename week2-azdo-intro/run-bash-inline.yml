@@ -1,0 +1,15 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo "Hello 👋 Running inline Bash inside Azure DevOps pipeline"
+  displayName: "Inline Bash Example"
+
+- script: |
+    echo "Current directory: $(pwd)"
+    echo "Listing files:"
+    ls -l
+  displayName: "Run multiple Bash commands"

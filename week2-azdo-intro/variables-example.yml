@@ -1,0 +1,15 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  appName: "MyDemoApp"
+  buildNumber: "$(Build.BuildId)"
+
+steps:
+- script: |
+    echo "Deploying application: $(appName)"
+    echo "Build Number: $(buildNumber)"
+  displayName: "Use Variables in Pipeline"

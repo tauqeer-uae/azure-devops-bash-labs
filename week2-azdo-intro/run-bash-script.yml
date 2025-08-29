@@ -1,0 +1,13 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- checkout: self
+
+- script: |
+    chmod +x week1-bash-basics/day2-variables-loops.sh
+    ./week1-bash-basics/day2-variables-loops.sh
+  displayName: "Run external Bash script"
