@@ -11,6 +11,12 @@ steps:
   displayName: "Run Hello World Script"
 
 - script: |
+    sudo apt-get update && sudo apt-get install -y dos2unix
+    find . -type f -name "*.sh" -exec dos2unix {} \;
+  displayName: "Normalize Line Endings (LF)"
+
+
+- script: |
     bash week1-bash-basics/day1-basic-commands.sh
   displayName: "Run Day 1 Script"
 
