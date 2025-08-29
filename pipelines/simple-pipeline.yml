@@ -2,9 +2,9 @@ trigger:
 - main
 
 pool:
-  name: self-hosted-agent-pool   # your custom agent pool
+  name: linux-agent-pool   # your custom agent pool
   demands:
-    - agent.name -equals windows-agent1  # force this specific agent
+    - agent.name -equals linux-agent  # force this specific agent
 
 steps:
 - script: echo "Hello from Azure DevOps + Bash 🚀"
