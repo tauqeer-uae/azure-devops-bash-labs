@@ -2,13 +2,15 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  name: self-hosted-agent-pool   # your custom agent pool
+  demands:
+    - agent.name -equals windows-agent1  # force this specific agent
 
 steps:
 - script: echo "Hello from Azure DevOps + Bash 🚀"
   displayName: "Run Hello World Script"
 
 - script: |
-    chmod +x week1-bash-basics/day1-basic-commands.sh
-    ./week1-bash-basics/day1-basic-commands.sh
+    bash week1-bash-basics/day1-basic-commands.sh
   displayName: "Run Day 1 Script"
+
